@@ -19,5 +19,6 @@ for i in range(len(data)):
     imgName = os.path.basename(imgName.path)
     with open(f'/Users/Angelo/Documents/GitHub/digimonTCGSim/Assets/CardImages/BT-01/{imgName}', 'wb') as handler:
         handler.write(imgData)
+    data[i].pop('image_url', None)
 with open('/Users/Angelo/Documents/GitHub/digimonTCGSim/Assets/CardData/BT-01.json', 'w', encoding='utf-8') as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
